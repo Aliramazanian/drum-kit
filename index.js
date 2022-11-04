@@ -14,7 +14,7 @@ for (let i = 0; i < drumButtons; i++) {
 
 function makeSound(key) {
     switch (key) {
-        case "w":
+        case "W":
             let tom1 = new Audio("sounds/tom-1.mp3")
             tom1.play();
             break;
@@ -56,14 +56,16 @@ function makeSound(key) {
 
 
 document.addEventListener("keypress", function (event) {
-   makeSound(event.key) 
-   buttonAnimation(event.key)
+    makeSound(event.key)
+    buttonAnimation(event.key)
 })
 
-function buttonAnimation(currentKey){
+function buttonAnimation(currentKey) {
     let activeButton = document.querySelector("." + currentKey)
     activeButton.classList.add("pressed");
-    setTimeout(function(){
+    setTimeout(function () {
         activeButton.classList.remove("pressed");
-    },100)
+    }, 100)
 }
+
+
